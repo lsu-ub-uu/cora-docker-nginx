@@ -1,12 +1,3 @@
-FROM alpine:latest as builder
-
-ARG BASENAME
-ENV BASENAME=$BASENAME
-
-RUN apk add --no-cache git nodejs npm
-
-RUN npm install npm@latest -g
-
 FROM nginx:stable-alpine
 
 COPY nginx/nginx.conf /etc/nginx/conf.d
