@@ -13,8 +13,6 @@ COPY nginx/nginx.conf /etc/nginx/conf.d
 
 COPY entrypoint.sh /entrypoint.sh
 
-COPY --from=builder /diva-react-spa/dist /usr/share/nginx/html
-
 RUN rm /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
